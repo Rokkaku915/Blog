@@ -1,7 +1,16 @@
 # main links
 main:
-  - title: "Quick-Start Guide"
-    url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
+# Title 글자 크기, 색깔 조절
+  - title: "홈"
+    url: "/"
+  - title: "일본어"
+    url: "/Japan Language/"
+  - title: "연구"
+    url: "/Research/"
+  - title: "일상"
+    url: "/Daily Life/"
+  # - title: "Quick-Start Guide"
+  #   url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
   # - title: "About"
   #   url: https://mmistakes.github.io/minimal-mistakes/about/
   # - title: "Sample Posts"
