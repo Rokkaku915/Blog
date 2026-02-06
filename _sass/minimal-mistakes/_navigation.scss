@@ -235,6 +235,8 @@
 
     a {
       position: relative;
+      color: #666;                                            // Navigation 부분만 색깔(회색) 다르게 변경
+      font-size: 0.9rem;                                        // Navigation 부분만 글씨 크기 조금 작게 변경
 
       &:before {
         content: "";
