@@ -325,6 +325,10 @@ defaults:
       layout: single
       author_profile: true
       read_time: true
-      comments:                                                          # true
+      comments: false                                                    # true
       share: true
       related: true
+      sidebar_list: true
+      show_date: true
+
+date_format: "%Y-%m-%d"

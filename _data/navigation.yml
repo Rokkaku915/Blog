@@ -3,12 +3,27 @@ main:
 # Title 글자 크기, 색깔 조절
   - title: "홈"
     url: "/"
+
   - title: "일본어"
-    url: "/Japan Language/"
+    url: "/nihongo"
+    children: 
+    - title: "한자"
+      url: "/nihongo/kanji"
+
   - title: "연구"
-    url: "/Research/"
+    url: "/kenkyuu"
+    children:
+    - title: "학부연구생"
+      url: "/kenkyuu/kenkyuusei"
+
   - title: "일상"
-    url: "/Daily Life/"
+    url: "/nichijou"
+    children:
+    - title: "여행"
+      url: "/nichijou/tabi"
+    - title: "군대"
+      url: "/nichijou/heieki"
+
   # - title: "Quick-Start Guide"
   #   url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
   # - title: "About"
@@ -19,3 +34,26 @@ main:
   #   url: /collection-archive/
   # - title: "Sitemap"
   #   url: /sitemap/
+
+  # sidebar-category:
+  #   - title: "전체"
+  
+  #   - title: "일본어"
+  #     url: "/nihongo"
+  #     children: 
+  #     - title: "한자"
+  #       url: "nihongo/kanji"
+  
+  #   - title: "연구"
+  #     url: "/kenkyuu"
+  #     children:
+  #     - title: "학부연구생"
+  #       url: "kenkyuu/kenkyuusei"
+  
+  #   - title: "일상"
+  #     url: "/nichijou"
+  #     children:
+  #     - title: "여행"
+  #       url: "nichijou/tabi"
+  #     - title: "군대"
+  #       url: "nichijou/heieki"

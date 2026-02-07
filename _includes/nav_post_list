@@ -1,0 +1,55 @@
+{% assign sum = site.posts | size %}
+
+<nav class="nav__list">
+    <input id="ac-toc" name="accordion-toc" type="checkbox" />
+    <label for="ac-toc">{{ site.data.ui-text[site.locale].menu_label }}</label>
+    <ul class="nav__items" id="category_tag_menu">
+        <!-- 전체 글 수 -->
+        <li>
+            <span>전체 글 수</span> <span>{{sum}}</span> <span>개</span>
+        </li>
+
+        <!-- 일본어 카테고리 -->
+        <li>
+            <span class="nav__sub-title">일본어</span>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "kanji" %}
+                        <li><a href="/nihongo/kanji" class="">한자 ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </li>
+
+        <!-- 연구 카테고리 -->
+        <li>
+            <span class="nav__sub-title">연구   </span>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "kenkyuusei" %}
+                        <li><a href="/kenkyuu/kenkyuusei" class="">학부연구생 ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </li>
+
+        <!-- 일상 카테고리 -->
+        <li>
+            <span class="nav__sub-title">일상</span>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "tabi" %}
+                        <li><a href="/nichijou/tabi" class="">여행 ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "heieki" %}
+                        <li><a href="/nichijou/heieki" class="">군대 ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </li>
+    </ul>
+</nav>
