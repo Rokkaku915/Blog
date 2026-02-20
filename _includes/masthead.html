@@ -21,7 +21,31 @@
               >{{ link.title }}</a>
             </li>
           {%- endfor -%}
+          <li class="masthead__menu-item">
+            <a id="toggle-theme-pc" style="cursor: pointer;"></a>
+          </li>
         </ul>
+        <div class="mobile-icons">
+          {% if site.author.links %}
+            {% for link in site.author.links %}
+              {% if link.label == "Email" %}
+                <a href="mailto:{{ site.author.email }}" class="mobile-icon-link" aria-label="Email">
+                  <i class="fas fa-fw fa-envelope" aria-hidden="true"></i>
+                </a>
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+          {% if site.author.links %}
+            {% for link in site.author.links %}
+              {% if link.label == "GitHub" %}
+                <a href="{{ link.url }}" class="mobile-icon-link" aria-label="GitHub">
+                  <i class="fab fa-fw fa-github" aria-hidden="true"></i>
+                </a>
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+          <a id="toggle-theme-mobile" style="cursor: pointer;"></a>
+        </div>
         {% if site.search == true %}
         <button class="search__toggle" type="button">
           <span class="visually-hidden">{{ site.data.ui-text[site.locale].search_label | default: "Toggle search" }}</span>

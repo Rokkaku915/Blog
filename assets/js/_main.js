@@ -232,3 +232,21 @@ $(document).ready(function () {
       });
   }
 });
+
+
+
+
+
+
+
+
+// document.addEventListener('DOMContentLoaded', function() {
+//   const mobileThemeToggle = document.getElementById('toggle-theme-mobile');
+//   const desktopThemeToggle = document.getElementById('toggle-theme');
+
+//   if (mobileThemeToggle && desktopThemeToggle) {
+//     mobileThemeToggle.addEventListener('click', function () {
+//       desktopThemeToggle.click();
+//     });
+//   }
+// });

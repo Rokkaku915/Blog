@@ -1,4 +1,4 @@
-{% if page.previous or page.next %}
+<!-- {% if page.previous or page.next %}
   <nav class="pagination">
     {% if page.previous %}
       <a href="{{ page.previous.url | relative_url }}" class="pagination--pager" title="{{ page.previous.title | markdownify | strip_html | strip}}">{{ site.data.ui-text[site.locale].pagination_previous | default: "Previous" }}</a>
@@ -11,4 +11,35 @@
       <a href="#" class="pagination--pager disabled">{{ site.data.ui-text[site.locale].pagination_next | default: "Next" }}</a>
     {% endif %}
   </nav>
-{% endif %}
+{% endif %} -->
+
+<!--각 카테고리 내에서 이전글, 다음글로 이동하도록 설정-->
+{% assign cat = page.categories[0] %}
+{% assign cat_list = site.categories[cat] %}
+{% for post in cat_list %}
+  {% if post.url == page.url %}
+  	{% assign prevIndex = forloop.index0 | minus: 1 %}
+  	{% assign nextIndex = forloop.index0 | plus: 1 %}
+  	{% if forloop.first == false %}
+  	  {% assign next_post = cat_list[prevIndex] %}
+  	{% endif %}
+  	{% if forloop.last == false %}
+  	  {% assign prev_post = cat_list[nextIndex] %}
+  	{% endif %}
+  	{% break %}
+  {% endif %}
+{% endfor %}
+
+<!--글이 하나만 있을 때도 버튼은 뜨게 설정-->
+<nav class="pagination">
+  {% if next_post %}
+    <a href="{{ next_post.url }}" class="pagination--pager"><span class="upper_paper-title">Next<br></span>{{ next_post.title }}</a>
+  {% else %}
+    <a href="#" class="pagination--pager disabled"><span class="upper_paper-title">Next<br></span>-</a>
+  {% endif %}
+  {% if prev_post %}
+    <a href="{{ prev_post.url }}" class="pagination--pager"><span class="upper_paper-title">Previous<br></span>{{ prev_post.title }}</a>
+  {% else %}
+    <a href="#" class="pagination--pager disabled"><span class="upper_paper-title">Previous<br></span>-</a>
+  {% endif %}
+</nav>

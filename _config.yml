@@ -119,7 +119,7 @@ analytics:
 author:
   name             : "Park Taejun"
   avatar           : "/assets/images/Me_With_Nintendo(2024-02-01).jpg"   # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "차근차근, 확실하게"
+  bio              : "꿈을 곱씹으며 묵묵히 한 걸음씩"
   location         : "Seoul, Republic of Korea"
   #email           : "parktaejun0915@inha.edu"
   links:
@@ -328,7 +328,7 @@ defaults:
       read_time          : true
       comments           : false                                       
       share              : false
-      related            : true
+      related            : false
       sidebar_list       : true
       show_date          : true
       toc                : true                                        # 목차 기능 false (default)
@@ -336,3 +336,6 @@ defaults:
       toc_label          : "목차"
 
 date_format              : "%Y-%m-%d"
+
+after_footer_scripts:
+  - /assets/js/custom/dark-theme.js

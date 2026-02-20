@@ -3,6 +3,7 @@
 search: false
 ---
 
+// 파일 추가 이유 : Light/Dark 변경 버튼 추가
 @charset "utf-8";
 
 // CSS와 관련된 수정 사항은 전부 여기에 적을 것 ( @import 보다 먼저 적어야 적용될 때가 있음 )
@@ -91,14 +92,17 @@ $sans-serif: $default-sans-serif !default;
 $sans-serif-narrow: $sans-serif !default;
 $monospace: $default-monospace !default;
 
-// 수정 이유 : Sidebar 좌우 간격을 좁게 설정 ($large 한정)
+// 수정 이유 : Sidebar 좌우 간격을 좁게 설정
 $right-sidebar-width-narrow: 150px !default;                                            // defalut 200px
 $right-sidebar-width: 250px !default;                                                   // default 300px
 $right-sidebar-width-wide: 350px !default;                                              // default 400px
 
 
 
-@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
+
+// 수정 이유 : Light/Dark 변경 버튼 추가
+// @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
+@import "minimal-mistakes/skins/dark";
 @import "minimal-mistakes"; // main partials
 
 // ---------------------------------------------------------------------- //
@@ -700,3 +704,223 @@ body.layout--search input.search-input:focus {
     }
   }
 }
+
+// // ---------------------------------------------------------------------- //
+// // -                 _sass/minimal-mistakes/_reset.scss                 - //
+// // ---------------------------------------------------------------------- //
+// // 수정 이유 : Font Size 변경
+
+// // html {
+// //   /* apply a natural box layout model to all elements */
+// //   box-sizing: border-box;
+// //   background-color: $background-color;
+// //   font-size: 16px;
+
+// //   @include breakpoint($medium) {
+// //     font-size: 17px;
+// //   }
+
+// //   @include breakpoint($large) {
+// //     font-size: 19px;
+// //   }
+
+// //   @include breakpoint($x-large) {
+// //     font-size: 21px;
+// //   }
+
+// //   -webkit-text-size-adjust: 100%;
+// //   -ms-text-size-adjust: 100%;
+// // }
+
+// // ---------------------------------------------------------------------- //
+// // -                 _sass/minimal-mistakes/_base.scss                  - //
+// // ---------------------------------------------------------------------- //
+// // 수정 이유 : 글 양쪽 정렬(+ 글씨 끊기)로 변경
+
+// p {
+//     text-align: justify;
+//     word-break: break-all;
+// }
+
+// // 하이퍼링크 아랫줄 제거
+// a {
+//     text-decoration: none;
+// }
+
+// // ---------------------------------------------------------------------- //
+// // -                 _sass/minimal-mistakes/_page.scss                  - //
+// // ---------------------------------------------------------------------- //
+// // 수정 이유 : Page에서의 폰트 스타일 (크기, 굵기, 색깔 등) 변경
+
+// @include breakpoint($large) {
+//     // 포스팅 제목
+//     .page__title {
+//         font-size: 1.6rem;
+//         font-weight: 700;
+//         margin-top: 1.2em;
+//         margin-bottom: 0.5em;
+//     }
+
+//     // 포스팅 제목 밑의 작성 일자 및 소요 시간 글자
+//     .page__meta {
+//         font-size: 0.8rem;
+//         font-weight: 500;
+//     }
+
+//     // 본문 내용 글자
+//     .page__content p {
+//         font-size: 0.9rem;
+//         font-weight: 400;
+//         line-height: 1.2;
+//     }
+
+//     // 각 태그, 카테고리 내의 (Ex> 일본어, 한자) 글자
+//     .page__taxonomy a {
+//         font-size: 0.7rem;
+//         font-weight: 300;
+//         padding: 3px 6px;
+//     }
+
+//     .page__date {
+//         font-size: 0.7rem;
+//         font-weight: 300;
+//     }
+
+//     .page__taxonomy strong, .page__date strong {
+//         font-size: 0.7rem;
+//         font-weight: 500;
+//         margin-right: 5px;
+//     }
+
+//     .page__taxonomy i, .page__date i {
+//         font-size: 0.7rem;
+//         margin-right: 2px;
+//     }
+// }
+
+// .page__content h1 a,
+// .page__content h2 a,
+// .page__content h3 a,
+// .page__content h4 a,
+// .page__content h5 a,
+// .page__content h6 a {
+//     display: none;
+// }
+
+
+
+// // .toc {
+// //     background-color: #f7f7f7;
+// //     border-radius: 4px;
+// //     border: 1px solid #ddd;
+// // }
+
+// // ---------------------------------------------------------------------- //
+// // -                _sass/minimal-mistakes/_sidebar.scss                - //
+// // ---------------------------------------------------------------------- //
+// // 수정 이유 : Sidebar의 name과 bio, location 간격 변경 및 avatar 크기 조정 (_config.yml의 # Site Author 참고)
+
+// // Sidebar의 투명도 (원래는 0.75, Sidebar 위에 커서 올리면 1로 변경)
+// .sidebar {
+//     opacity: 1;
+//     transition: none;
+// }
+
+// // Sidebar의 avatar(이미지) 크기
+// .author__avatar img {
+//     max-width: 200px;
+//     width: 100%;
+// }
+
+// // Sidebar의 Bio(이름 밑의 소개 문구)의 두께와 Name(Park Taejun), Link(Seoul, Email, Github)들과의 간격 조절
+// .author__bio {
+//     font-weight: 700;
+
+//     p {
+//         margin-top: 1.6px;
+
+//         // 큰 화면에서는 Name과 Bio를 가깝게 하고 Link들과는 멀어지는 것이 이쁘지만, 작은 화면에서는 조금 별로임
+//         @include breakpoint($large) {
+//             margin-top: -5px;
+//             margin-bottom: 25px;
+//         }
+//     }
+// }
+
+// // Sidebar의 Nav(전체 글, 일본어... 등등)의 간격 조절
+// @include breakpoint($large) {
+//     .sidebar .nav__list {
+//         .nav__sub-title {
+//             margin-top: 10px;
+//             margin-bottom: 4px;
+//             padding-bottom: 4px;
+//         }
+
+//         // "전체 글"과 "일본어" 사이의 간격 조절
+//         li:nth-child(2) .nav__sub-title {
+//             margin-top: 0px;
+//         }
+
+//         li {
+//             margin-bottom: 0px;
+//         }
+//     }
+// }
+
+// // Mobile Version Sidebar에서 토글 메뉴 위치 조정 및 팔로우 버튼 삭제(해당 내용을 어디에 표시할 지 고민해보기)
+// @include breakpoint(max-width $large - 1px) {
+//     .sidebar {
+//         position: relative;
+
+//         .author__urls-wrapper {
+//             button {
+//                 display: none;
+//             }
+//         }
+
+//         .nav__list label {
+//             position: absolute;
+//             top: 0px;
+//             right: 0px;
+//         }
+//     }
+
+//     .sidebar {
+//         margin-bottom: 0px;
+//         padding-bottom: 10px;
+//     }
+    
+//     .page {
+//         margin-top: 0px;
+//         padding-top: 10px;
+//     }
+
+//     .nav__list {
+//         margin-bottom: -1.5em;
+//     }
+
+//     .nav__list input:checked ~ .nav__items {
+//         // -webkit-transition: 0.5s ease-in-out;
+//         // transition: 0.5s ease-in-out;
+//         max-height: 500px;
+
+//         margin-top: -0.5em;
+//     }
+
+//     .sidebar .nav__list {
+//         .nav__sub-title {
+//             margin-top: -10px;
+//             margin-bottom: 2px;
+//             padding-bottom: 2px;
+//         }
+
+//         // "전체 글"과 "일본어" 사이의 간격 조절
+//         li:nth-child(2) .nav__sub-title {
+//             margin-top: 0px;
+//         }
+
+//         li {
+//             margin-bottom: 0px;
+//         }
+//     }
+// }

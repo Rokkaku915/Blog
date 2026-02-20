@@ -5,24 +5,24 @@ main:
     url: "/"
 
   - title: "일본어"
-    url: "/nihongo"
+    url: "/japanese"
     children: 
     - title: "한자"
-      url: "/nihongo/kanji"
+      url: "/japanese/kanji"
 
   - title: "연구"
-    url: "/kenkyuu"
+    url: "/research"
     children:
     - title: "학부연구생"
-      url: "/kenkyuu/kenkyuusei"
+      url: "/research/undergraduate_research_student"
 
   - title: "일상"
-    url: "/nichijou"
+    url: "/daily_life"
     children:
     - title: "여행"
-      url: "/nichijou/tabi"
+      url: "/daily_life/travel"
     - title: "군대"
-      url: "/nichijou/heieki"
+      url: "/daily_life/air_force"
 
   - title: "Search"
     url: "/search"
